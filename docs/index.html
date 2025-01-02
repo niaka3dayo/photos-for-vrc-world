@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <title>VRChat World Image Gallery</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+    h1 {
+      text-align: center;
+      margin: 0 0 30px;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .gallery img {
+      margin: 10px;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      max-width: 300px;
+      height: auto;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+    }
+  </style>
+</head>
+<body>
+  <h1>Cyanaria</h1>
+  <div class="gallery">
+    <img src="cyanaria/1f-board-a.png" alt="VRChat World Image 1">
+    <img src="cyanaria/1f-board-b.png" alt="VRChat World Image 2">
+    <img src="cyanaria/1f-board-c.png" alt="VRChat World Image 3">
+    <img src="cyanaria/2f-board-a.png" alt="VRChat World Image 4">
+    <img src="cyanaria/2f-board-b.png" alt="VRChat World Image 5">
+    <img src="cyanaria/2f-board-c.png" alt="VRChat World Image 6">
+  </div>
+</body>
+</html>
