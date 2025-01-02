@@ -1,0 +1,63 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 20px;
+  background: #f9f9f9;
+}
+
+h1 {
+  text-align: center;
+  margin: 0 0 30px;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery-item {
+  margin: 10px;
+  text-align: center;
+}
+
+.gallery-item img {
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  max-width: 300px;
+  height: auto;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer; /* クリック可能であることを示す */
+}
+
+.gallery-item img:hover {
+  transform: scale(1.05);
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+.url-box {
+  margin-top: 10px;
+  width: 100%;
+  max-width: 300px;
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.copy-button {
+  margin-top: 5px;
+  padding: 5px 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+.copy-button:hover {
+  background-color: #45a049;
+}
