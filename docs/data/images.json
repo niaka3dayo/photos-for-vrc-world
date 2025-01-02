@@ -1,27 +1,27 @@
 {
   "images": [
     {
-      "src": "images/cyanaria/1f-board-a.png",
+      "src": "images/cyanaria/1f-board-a.webp",
       "alt": "VRChat World Image 1"
     },
     {
-      "src": "images/cyanaria/1f-board-b.png",
+      "src": "images/cyanaria/1f-board-b.webp",
       "alt": "VRChat World Image 2"
     },
     {
-      "src": "images/cyanaria/1f-board-c.png",
+      "src": "images/cyanaria/1f-board-c.webp",
       "alt": "VRChat World Image 3"
     },
     {
-      "src": "images/cyanaria/2f-board-a.png",
+      "src": "images/cyanaria/2f-board-a.webp",
       "alt": "VRChat World Image 4"
     },
     {
-      "src": "images/cyanaria/2f-board-b.png",
+      "src": "images/cyanaria/2f-board-b.webp",
       "alt": "VRChat World Image 5"
     },
     {
-      "src": "images/cyanaria/2f-board-c.png",
+      "src": "images/cyanaria/2f-board-c.webp",
       "alt": "VRChat World Image 6"
     }
   ]
