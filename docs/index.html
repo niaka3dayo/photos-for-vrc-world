@@ -19,30 +19,120 @@
       flex-wrap: wrap;
       justify-content: center;
     }
-    .gallery img {
+    .gallery-item {
       margin: 10px;
+      text-align: center;
+    }
+    .gallery-item img {
       border: 2px solid #ccc;
       border-radius: 4px;
       max-width: 300px;
       height: auto;
       box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
       transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer; /* クリック可能であることを示す */
     }
-    .gallery img:hover {
+    .gallery-item img:hover {
       transform: scale(1.05);
       box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+    }
+    .url-box {
+      margin-top: 10px;
+      width: 100%;
+      max-width: 300px;
+      padding: 5px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    .copy-button {
+      margin-top: 5px;
+      padding: 5px 10px;
+      font-size: 14px;
+      border: none;
+      border-radius: 4px;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+    .copy-button:hover {
+      background-color: #45a049;
     }
   </style>
 </head>
 <body>
   <h1>Cyanaria</h1>
   <div class="gallery">
-    <img src="cyanaria/1f-board-a.png" alt="VRChat World Image 1">
-    <img src="cyanaria/1f-board-b.png" alt="VRChat World Image 2">
-    <img src="cyanaria/1f-board-c.png" alt="VRChat World Image 3">
-    <img src="cyanaria/2f-board-a.png" alt="VRChat World Image 4">
-    <img src="cyanaria/2f-board-b.png" alt="VRChat World Image 5">
-    <img src="cyanaria/2f-board-c.png" alt="VRChat World Image 6">
+    <div class="gallery-item">
+      <img src="cyanaria/1f-board-a.png" alt="VRChat World Image 1">
+      <input type="text" class="url-box" readonly>
+      <button class="copy-button">コピー</button>
+    </div>
+    <div class="gallery-item">
+      <img src="cyanaria/1f-board-b.png" alt="VRChat World Image 2">
+      <input type="text" class="url-box" readonly>
+      <button class="copy-button">コピー</button>
+    </div>
+    <div class="gallery-item">
+      <img src="cyanaria/1f-board-c.png" alt="VRChat World Image 3">
+      <input type="text" class="url-box" readonly>
+      <button class="copy-button">コピー</button>
+    </div>
+    <div class="gallery-item">
+      <img src="cyanaria/2f-board-a.png" alt="VRChat World Image 4">
+      <input type="text" class="url-box" readonly>
+      <button class="copy-button">コピー</button>
+    </div>
+    <div class="gallery-item">
+      <img src="cyanaria/2f-board-b.png" alt="VRChat World Image 5">
+      <input type="text" class="url-box" readonly>
+      <button class="copy-button">コピー</button>
+    </div>
+    <div class="gallery-item">
+      <img src="cyanaria/2f-board-c.png" alt="VRChat World Image 6">
+      <input type="text" class="url-box" readonly>
+      <button class="copy-button">コピー</button>
+    </div>
   </div>
+
+  <!-- JavaScriptを追加 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const galleryItems = document.querySelectorAll('.gallery-item');
+
+      galleryItems.forEach(function(item) {
+        const img = item.querySelector('img');
+        const urlBox = item.querySelector('.url-box');
+        const copyButton = item.querySelector('.copy-button');
+
+        // 画像の絶対URLを取得してテキストボックスに設定
+        const absoluteUrl = new URL(img.getAttribute('src'), window.location.href).href;
+        urlBox.value = absoluteUrl;
+
+        // 画像をクリックしたらURLをコピー
+        img.addEventListener('click', async function() {
+          try {
+            await navigator.clipboard.writeText(absoluteUrl);
+            alert('画像のURLがクリップボードにコピーされました:\n' + absoluteUrl);
+          } catch (err) {
+            console.error('クリップボードへのコピーに失敗しました:', err);
+            alert('URLのコピーに失敗しました。手動でコピーしてください。');
+          }
+        });
+
+        // コピーボタンをクリックしたらURLをコピー
+        copyButton.addEventListener('click', async function() {
+          try {
+            await navigator.clipboard.writeText(urlBox.value);
+            alert('画像のURLがクリップボードにコピーされました:\n' + urlBox.value);
+          } catch (err) {
+            console.error('クリップボードへのコピーに失敗しました:', err);
+            alert('URLのコピーに失敗しました。手動でコピーしてください。');
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
