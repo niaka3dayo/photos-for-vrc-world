@@ -1,8 +1,8 @@
+const scriptElement = document.currentScript;
+const jsonFile = scriptElement.dataset.json || 'data/images.json';
+
 document.addEventListener('DOMContentLoaded', () => {
   const galleryContainer = document.querySelector('.gallery');
-
-  const scriptElement = document.currentScript;
-  const jsonFile = scriptElement.dataset.json || 'data/images.json';
 
   // JSONファイルから画像データをロード
   fetch(jsonFile)

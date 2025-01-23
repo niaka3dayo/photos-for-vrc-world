@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <title>VRChat World Image Gallery</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ワールド選択</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Cyanaria</h1>
-  <div class="gallery">
-    <!-- ギャラリー項目はJavaScriptによって動的に挿入 -->
-  </div>
-  <script src="js/gallery.js" data-json="data/images.json"></script>
+  <main class="world-selector">
+    <h1>VRChatワールド写真ギャラリー</h1>
+    <div class="world-grid">
+      <a href="cyanaria.html" class="world-card">
+        <img src="images/cyanaria/1f-board-a.webp" alt="シアナリアワールド">
+        <h2>Cyanaria World</h2>
+      </a>
+      <a href="moonlit-manor.html" class="world-card">
+        <img src="images/cyanaria/1f-board-a.webp" alt="ムーンリットマナー">
+        <h2>Moonlit Manor</h2>
+      </a>
+    </div>
+  </main>
 </body>
 </html>
