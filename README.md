@@ -1,6 +1,6 @@
 # VRChat World Image Gallery
 
-GitHub Pagesを使ったVRChat用ワールド画像ギャラリーです。画像は`data/images.json`に一覧を記述し、`images`ディクトリに配置しています。
+GitHub Pagesを使ってVRChatのワールドでダウンロードさせるための画像ギャラリーです。画像は`data/images.json`に一覧を記述し、`images`ディクトリに配置しています。
 `index.html`および外部JavaScriptとCSSファイルによってギャラリーが動的に生成されます。
 
 ## 使い方
