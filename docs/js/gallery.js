@@ -1,8 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
   const galleryContainer = document.querySelector('.gallery');
 
+  const scriptElement = document.currentScript;
+  const jsonFile = scriptElement.dataset.json || 'data/images.json';
+
   // JSONファイルから画像データをロード
-  fetch('data/images.json')
+  fetch(jsonFile)
     .then(response => {
       if (!response.ok) {
         throw new Error('JSONファイルのロードに失敗しました');
