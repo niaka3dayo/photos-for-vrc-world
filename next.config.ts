@@ -1,8 +1,10 @@
 import type { NextConfig } from 'next';
 
+/**
+ * Define the Next.js configuration.
+ */
 const nextConfig: NextConfig = {
     output: 'export',
-    distDir: 'docs',
     images: {
         unoptimized: true,
     },
