@@ -1,6 +1,6 @@
 'use client';
 
-import WorldCard from '@/components/WorldCard';
+import WorldCard from '@/components/ui/data-display/WorldCard/WorldCard';
 import { worldList } from '@/domains/world/world.constants';
 
 /**

@@ -3,16 +3,17 @@
 import { useEffect } from 'react';
 import Image from 'next/image';
 import { WorldImage } from '@/domains/world/world.types';
-import nextConfig from '../../next.config';
-
-const BASE_PATH = nextConfig.basePath || '';
-
+import getStaticImagePath from '@/utils/getStaticImagePath/getStaticImagePath';
+import useImageUrlCopyButton from '@/hooks/useImageUrlCopyButton/useImageUrlCopyButton';
 interface ImageModalProps {
     image: WorldImage;
     onClose: () => void;
 }
 
 const ImageModal = ({ image, onClose }: ImageModalProps) => {
+    const imagePath = getStaticImagePath(image.src);
+    const { handleCopyButtonClick, copied } = useImageUrlCopyButton();
+
     useEffect(() => {
         const handleEscape = (e: KeyboardEvent) => {
             if (e.key === 'Escape') {
@@ -23,15 +24,6 @@ const ImageModal = ({ image, onClose }: ImageModalProps) => {
         window.addEventListener('keydown', handleEscape);
         return () => window.removeEventListener('keydown', handleEscape);
     }, [onClose]);
-
-    const handleCopy = async () => {
-        try {
-            await navigator.clipboard.writeText(window.location.origin + image.src);
-            alert('URLをコピーしました');
-        } catch (err) {
-            console.error('Failed to copy:', err);
-        }
-    };
 
     return (
         <div
@@ -51,7 +43,7 @@ const ImageModal = ({ image, onClose }: ImageModalProps) => {
 
                 <div className="relative">
                     <Image
-                        src={`${BASE_PATH}/${image.src}`}
+                        src={imagePath}
                         alt={image.alt}
                         width={1000}
                         height={800}
@@ -59,12 +51,23 @@ const ImageModal = ({ image, onClose }: ImageModalProps) => {
                     />
                 </div>
 
-                <button
-                    onClick={handleCopy}
-                    className="w-full mt-4 py-3 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
-                >
-                    URLをコピー
-                </button>
+                <div className="mt-4">
+                    <button
+                        onClick={handleCopyButtonClick}
+                        data-image-url={imagePath}
+                        className="w-full py-3 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors relative"
+                        disabled={copied}
+                    >
+                        {copied ? 'コピー完了！' : 'URLをコピー'}
+                    </button>
+                    <div
+                        className={`absolute left-0 right-0 text-center ${copied ? 'block' : 'hidden'}`}
+                    >
+                        <div className="inline-block mt-2 px-4 py-2 bg-green-500 text-white text-sm rounded-full shadow-lg animate-fade-in-out">
+                            ✓ クリップボードにコピーしました
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );

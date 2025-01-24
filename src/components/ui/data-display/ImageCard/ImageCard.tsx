@@ -3,9 +3,7 @@
 import Image from 'next/image';
 
 import { WorldImage } from '@/domains/world/world.types';
-import nextConfig from '../../next.config';
-
-const BASE_PATH = nextConfig.basePath || '';
+import getStaticImagePath from '@/utils/getStaticImagePath/getStaticImagePath';
 
 interface ImageCardProps {
     image: WorldImage;
@@ -13,6 +11,8 @@ interface ImageCardProps {
 }
 
 const ImageCard = ({ image, onImageClick }: ImageCardProps) => {
+    const imagePath = getStaticImagePath(image.src);
+
     return (
         <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:translate-y-[-3px] transition-transform duration-300">
             <div
@@ -20,7 +20,7 @@ const ImageCard = ({ image, onImageClick }: ImageCardProps) => {
                 onClick={() => onImageClick(image)}
             >
                 <Image
-                    src={`${BASE_PATH}/${image.src}`}
+                    src={imagePath}
                     alt={image.alt}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw"

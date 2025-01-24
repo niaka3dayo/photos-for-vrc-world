@@ -3,15 +3,15 @@
 import { World } from '@/domains/world/world.types';
 import Image from 'next/image';
 import Link from 'next/link';
-import nextConfig from '../../next.config';
-
-const BASE_PATH = nextConfig.basePath || '';
+import getStaticImagePath from '@/utils/getStaticImagePath/getStaticImagePath';
 
 interface WorldCardProps {
     world: World;
 }
 
 const WorldCard = ({ world }: WorldCardProps) => {
+    const imagePath = getStaticImagePath(world.coverImage);
+
     return (
         <Link
             href={`/world/${world.slug}`}
@@ -19,7 +19,7 @@ const WorldCard = ({ world }: WorldCardProps) => {
         >
             <div className="relative h-[200px] w-full">
                 <Image
-                    src={`${BASE_PATH}/${world.coverImage}`}
+                    src={imagePath}
                     alt={world.titleJa}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

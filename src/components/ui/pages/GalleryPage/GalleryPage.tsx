@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import ImageModal from '../../../ImageModal';
-import ImageCard from '../../../ImageCard';
+import ImageModal from '../../data-display/ImageModal/ImageModal';
+import ImageCard from '../../data-display/ImageCard/ImageCard';
 import { WorldImage } from '@/domains/world/world.types';
 
 interface GalleryProps {
