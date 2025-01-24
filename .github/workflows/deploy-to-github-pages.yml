@@ -36,8 +36,8 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
-          # basePath の自動注入などを行う
           static_site_generator: next
+          generator_config_file: next.config.ts
 
       - name: Cache pnpm store
         uses: actions/cache@v4
