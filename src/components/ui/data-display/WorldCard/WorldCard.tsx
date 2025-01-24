@@ -17,7 +17,7 @@ const WorldCard = ({ world }: WorldCardProps) => {
             href={`/world/${world.slug}`}
             className="bg-white rounded-xl overflow-hidden no-underline text-inherit transition-all duration-300 hover:translate-y-[-5px] hover:shadow-lg block"
         >
-            <div className="relative h-[200px] w-full">
+            <div className="relative w-full aspect-[4/3]">
                 <Image
                     src={imagePath}
                     alt={world.titleJa}
@@ -26,7 +26,7 @@ const WorldCard = ({ world }: WorldCardProps) => {
                     className="object-cover border-b-[3px] border-blue-500"
                 />
             </div>
-            <h2 className="m-4 text-xl text-gray-700">{world.name}</h2>
+            <h2 className="px-4 py-3 text-xl text-gray-700">{world.name}</h2>
         </Link>
     );
 };

@@ -3,17 +3,17 @@ import { World } from './world.types';
 
 export const worldList: World[] = [
     {
+        slug: 'moonlit-manor',
+        name: 'Moonlit Manor -Luminous Update-',
+        titleJa: 'Moonlit Manor',
+        coverImage: '/moonlit-manor/_thumbnail.webp',
+        gallery: moonlitManorGallery,
+    },
+    {
         slug: 'cyanaria',
         name: 'Cyanaria',
         titleJa: 'Cyanaria',
-        coverImage: '/cyanaria/1f-board-a.webp',
+        coverImage: '/cyanaria/_thumbnail.webp',
         gallery: cyanariaGallery,
-    },
-    {
-        slug: 'moonlit-manor',
-        name: 'Moonlit Manor',
-        titleJa: 'Moonlit Manor',
-        coverImage: '/moonlit-manor/h-living-bar-1.webp',
-        gallery: moonlitManorGallery,
     },
 ];
