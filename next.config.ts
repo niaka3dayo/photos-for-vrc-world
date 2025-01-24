@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
         unoptimized: true,
     },
     trailingSlash: true,
+    basePath: '/photos-for-vrc-world',
 };
 
 export default nextConfig;
