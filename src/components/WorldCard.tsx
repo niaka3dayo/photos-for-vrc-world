@@ -3,6 +3,9 @@
 import { World } from '@/domains/world/world.types';
 import Image from 'next/image';
 import Link from 'next/link';
+import nextConfig from '../../next.config';
+
+const BASE_PATH = nextConfig.basePath || '';
 
 interface WorldCardProps {
     world: World;
@@ -16,7 +19,7 @@ const WorldCard = ({ world }: WorldCardProps) => {
         >
             <div className="relative h-[200px] w-full">
                 <Image
-                    src={world.coverImage}
+                    src={`${BASE_PATH}/${world.coverImage}`}
                     alt={world.titleJa}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

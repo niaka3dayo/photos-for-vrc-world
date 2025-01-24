@@ -1,7 +1,11 @@
 'use client';
 
 import Image from 'next/image';
+
 import { WorldImage } from '@/domains/world/world.types';
+import nextConfig from '../../next.config';
+
+const BASE_PATH = nextConfig.basePath || '';
 
 interface ImageCardProps {
     image: WorldImage;
@@ -16,7 +20,7 @@ const ImageCard = ({ image, onImageClick }: ImageCardProps) => {
                 onClick={() => onImageClick(image)}
             >
                 <Image
-                    src={image.src}
+                    src={`${BASE_PATH}/${image.src}`}
                     alt={image.alt}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw"

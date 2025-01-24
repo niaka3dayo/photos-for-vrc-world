@@ -3,6 +3,9 @@
 import { useEffect } from 'react';
 import Image from 'next/image';
 import { WorldImage } from '@/domains/world/world.types';
+import nextConfig from '../../next.config';
+
+const BASE_PATH = nextConfig.basePath || '';
 
 interface ImageModalProps {
     image: WorldImage;
@@ -48,7 +51,7 @@ const ImageModal = ({ image, onClose }: ImageModalProps) => {
 
                 <div className="relative">
                     <Image
-                        src={image.src}
+                        src={`${BASE_PATH}/${image.src}`}
                         alt={image.alt}
                         width={1000}
                         height={800}
