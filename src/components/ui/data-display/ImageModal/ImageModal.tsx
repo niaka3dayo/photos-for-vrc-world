@@ -49,6 +49,9 @@ const ImageModal = ({ image, onClose }: ImageModalProps) => {
                         height={800}
                         className="max-w-[min(90vw,1000px)] max-h-[min(80vh,800px)] w-auto h-auto object-contain rounded"
                     />
+                    <div className="absolute bottom-2 right-2 bg-black/50 text-white px-2 py-1 rounded text-sm backdrop-blur-sm">
+                        {image.src.split('/').pop()}
+                    </div>
                 </div>
 
                 <div className="mt-4">
