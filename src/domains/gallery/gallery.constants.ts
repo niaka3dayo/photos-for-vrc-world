@@ -96,11 +96,11 @@ export const moonlitManorGallery: Gallery = {
             alt: '2nd image of the poster in the living room',
         },
         {
-            src: '/moonlit-manor/h-living-bar-1.webp',
+            src: '/moonlit-manor/h-living-bar-1-v2.webp',
             alt: '1st image of the bar in the living room',
         },
         {
-            src: '/moonlit-manor/h-bedroom-1.webp',
+            src: '/moonlit-manor/h-bedroom.webp',
             alt: '1st image of the bedroom',
         },
     ],
